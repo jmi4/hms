@@ -176,6 +176,7 @@ docker_container node['hms']['pia']['container_name'] do
   action :run
 end
 
+# Deluge
 docker_container node['hms']['deluge']['container_name'] do
   network_mode node['hms']['deluge']['network_mode']
   repo 'linuxserver/deluge'
