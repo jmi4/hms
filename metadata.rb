@@ -1,6 +1,6 @@
 name 'hms'
 maintainer 'som3guy'
-maintainer_email 'you@example.com'
+maintainer_email 'jmiller3346@gmail.com'
 license 'all_rights'
 description 'Installs/Configures hms'
 long_description 'Installs/Configures hms'
