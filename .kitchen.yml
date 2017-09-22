@@ -8,7 +8,7 @@ provisioner:
   name: chef_zero
   roles_path: 'test/integration/roles'
   data_bags_path: 'test/integration/data_bags'
-  encrypted_data_bag_secret_key_path: '../../secrets/encrypted_data_bag_secret'
+  encrypted_data_bag_secret_key_path: 'test/integration/default/sc'
   environments_path: 'test/integration/environments'
   client_rb:
     environment: 'test_hms'
