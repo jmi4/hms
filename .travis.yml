@@ -7,5 +7,5 @@ sudo: false
 rvm:
 - 2.3.0
 script:
-- bundle exec cooksyle
+- bundle exec cookstyle
 - bundle exec foodcritic -f any .
