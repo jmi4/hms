@@ -210,6 +210,5 @@ end
 # TODO: Install OSSEC
 # TODO: Configure firewall
 # Had to run: iptables -I INPUT 4 -i docker0 -j ACCEPT for sonarr to speak to jackett. (Not likely needed anymore)
-
 # May not need now that they are all on host mode.
 # TODO: Configure and enable SELinux if possible, docker may not work.
