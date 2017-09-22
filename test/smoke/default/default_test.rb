@@ -10,7 +10,6 @@ describe user('root') do
   skip 'This is an example test, replace with your own test.'
 end
 
-
 describe port(8080) do
   it { should be_listening }
   skip 'This is an example test, replace with your own test.'

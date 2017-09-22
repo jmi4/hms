@@ -33,12 +33,12 @@ usr_list.each do |usr|
   describe user(usr) do
     it { should exist }
     its('shell') { should eq '/sbin/nologin' }
-    its('groups') { should eq [usr, 'mediaadmins']}
+    its('groups') { should eq [usr, 'mediaadmins'] }
   end
 end
 
 describe package('docker') do
-  it {should be_installed}
+  it { should be_installed }
 end
 
 describe service('docker') do
@@ -49,63 +49,63 @@ end
 describe docker_container('plex') do
   it { should exist }
   it { should be_running }
-  its('repo') { should eq 'plexinc/pms-docker'}
+  its('repo') { should eq 'plexinc/pms-docker' }
   its('tag') { should eq 'latest' }
 end
 
 describe docker_container('radarr') do
   it { should exist }
   it { should be_running }
-  its('repo') { should eq 'linuxserver/radarr'}
+  its('repo') { should eq 'linuxserver/radarr' }
   its('tag') { should eq 'latest' }
 end
 
 describe docker_container('jackett') do
   it { should exist }
   it { should be_running }
-  its('repo') { should eq 'linuxserver/jackett'}
+  its('repo') { should eq 'linuxserver/jackett' }
   its('tag') { should eq 'latest' }
 end
 
 describe docker_container('sonarr') do
   it { should exist }
   it { should be_running }
-  its('repo') { should eq 'linuxserver/sonarr'}
+  its('repo') { should eq 'linuxserver/sonarr' }
   its('tag') { should eq 'latest' }
 end
 
 describe docker_container('plexpy') do
   it { should exist }
   it { should be_running }
-  its('repo') { should eq 'linuxserver/plexpy'}
+  its('repo') { should eq 'linuxserver/plexpy' }
   its('tag') { should eq 'latest' }
 end
 
 describe docker_container('headphones') do
   it { should exist }
   it { should be_running }
-  its('repo') { should eq 'linuxserver/headphones'}
+  its('repo') { should eq 'linuxserver/headphones' }
   its('tag') { should eq 'latest' }
 end
 
 describe docker_container('pia') do
   it { should exist }
   it { should be_running }
-  its('repo') { should eq 'colinhebert/pia-openvpn'}
+  its('repo') { should eq 'colinhebert/pia-openvpn' }
   its('tag') { should eq 'latest' }
 end
 
 describe docker_container('deluge') do
   it { should exist }
   it { should be_running }
-  its('repo') { should eq 'linuxserver/deluge'}
+  its('repo') { should eq 'linuxserver/deluge' }
   its('tag') { should eq 'latest' }
 end
 
 describe docker_container('sabnzbd') do
   it { should exist }
   it { should be_running }
-  its('repo') { should eq 'linuxserver/sabnzbd'}
+  its('repo') { should eq 'linuxserver/sabnzbd' }
   its('tag') { should eq 'latest' }
 end
 
