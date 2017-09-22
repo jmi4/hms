@@ -141,6 +141,7 @@ docker_container node['hms']['plexpy']['container_name'] do
   action :run
 end
 
+#headphones
 docker_container node['hms']['headphones']['container_name'] do
   network_mode node['hms']['headphones']['network_mode']
   repo 'linuxserver/headphones'
