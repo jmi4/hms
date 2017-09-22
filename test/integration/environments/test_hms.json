@@ -1,0 +1,11 @@
+{
+  "name": "test_hms",
+  "description": "Environment for kitchen testing",
+  "json_class": "Chef::Environment",
+  "chef_type": "environment",
+  "default_attributes": {
+    "hms": {
+        "data_bag_secret_path" : "/tmp/kitchen/encrypted_data_bag_secret"
+    }
+  }
+}

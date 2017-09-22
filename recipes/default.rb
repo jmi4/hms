@@ -9,7 +9,7 @@ include_recipe 'yum-epel'
 # execute 'yum_update_all' do
 #   command 'yum update -y'
 # end
-secret = Chef::EncryptedDataBagItem.load_secret('/etc/chef/encrypted_data_bag_secret')
+secret = Chef::EncryptedDataBagItem.load_secret(node['hms']['data_bag_secret_path'])
 secrets = Chef::EncryptedDataBagItem.load('credentials', 'hms', secret)
 
 plex_claim_token = secrets['plex_claim']

@@ -1,0 +1,11 @@
+{
+  "name": "default",
+  "chef_type": "role",
+  "json_class": "Chef::Role",
+  "description": "Used for default test kitchen",
+  "run_list": [
+    "recipe[hms::default]"
+  ],
+  "default_attributes": {
+  }
+}

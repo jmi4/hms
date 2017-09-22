@@ -3,6 +3,7 @@
 # Attributes:: default
 #
 # Copyright:: 2017, The Authors, All Rights Reserved.
+default['hms']['data_bag_secret_path'] = '/etc/chef/encrypted_data_bag_secret'
 default['hms']['admin_group_name'] = 'mediaadmins'
 default['hms']['admin_group_gid'] = '1001'
 default['hms']['default_user_shell'] = '/sbin/nologin'
@@ -150,5 +151,5 @@ default['hms']['management_package_list'] = %w(
   htop
   bind-utils
   wget
-  vim
+  vim-enhanced
 )
