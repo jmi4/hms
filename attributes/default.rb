@@ -122,7 +122,6 @@ default['hms']['directory_list'] = %w(
   /home/media/movies
   /home/media/music
   /home/deluge
-  /home/deluge/openvpn
   /home/downloads
   /home/downloads/incomplete
   /home/downloads/completed
@@ -150,6 +149,7 @@ default['hms']['management_package_list'] = %w(
   atop
   htop
   bind-utils
+  unzip
   wget
   vim-enhanced
 )
