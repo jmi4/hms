@@ -9,7 +9,6 @@ describe file('/etc/yum.repos.d/epel.repo') do
   it { should be_file }
 end
 
-# testing
 pkg_list = %w(atop htop bind-utils wget vim-enhanced)
 pkg_list.each do |pkg|
   describe package(pkg) do
