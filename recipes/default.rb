@@ -205,7 +205,7 @@ docker_container node['hms']['sabnzbd']['container_name'] do
 end
 
 cron 'fix perms on downloads' do
-  minute '1'
+  minute '*/1'
   command 'chmod -R 775 /home/downloads/completed/*'
   user 'root'
 end
