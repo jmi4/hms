@@ -109,6 +109,13 @@ describe docker_container('sabnzbd') do
   its('tag') { should eq 'latest' }
 end
 
+describe docker_container('subliminal') do
+  it { should exist }
+  it { should be_running }
+  its('repo') { should eq 'diaoulael/subliminals' }
+  its('tag') { should eq 'latest' }
+end
+
 port_list = %w(8080 32400 32401 8181 32469 22 32600 8989 9117 7878 8112 9090)
 port_list.each do |prt|
   describe port(prt) do
