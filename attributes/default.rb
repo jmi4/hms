@@ -102,6 +102,14 @@ default['hms']['sabnzbd']['volumes'] = [
   '/home/downloads/incomplete:/incomplete-downloads',
 ]
 
+default['hms']['subliminal']['container_name'] = 'subliminal'
+default['hms']['subliminal']['network_mode'] = 'host'
+default['hms']['subliminal']['restart_policy'] = 'always'
+default['hms']['subliminal']['volumes'] = [
+  '/home/subliminal/cache:/usr/src/cache',
+  '/home/media/:/media',
+]
+
 default['hms']['docker']['image_list'] = %w(
   plexinc/pms-docker
   colinhebert/pia-openvpn
@@ -113,6 +121,7 @@ default['hms']['docker']['image_list'] = %w(
   splunk/splunk
   linuxserver/headphones
   linuxserver/sabnzbd
+  diaoulael/subliminal
 )
 
 default['hms']['directory_list'] = %w(
@@ -132,6 +141,8 @@ default['hms']['directory_list'] = %w(
   /home/plexpy
   /home/headphones
   /home/sabnzbd
+  /home/subliminal
+  /home/subliminal/cache
 )
 
 default['hms']['user_list'] = %w(

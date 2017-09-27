@@ -204,6 +204,14 @@ docker_container node['hms']['sabnzbd']['container_name'] do
   action :run
 end
 
+docker_container node['hms']['subliminal']['container_name'] do
+  network_mode node['hms']['subliminal']['network_mode']
+  restart_policy node['hms']['subliminal']['restart_policy']
+  repo 'diaoulael/subliminal'
+  volumes node['hms']['subliminal']['volumes']
+  action :run
+end
+
 cron 'fix perms on downloads' do
   minute '*/1'
   command 'chmod -R 775 /home/downloads/completed/*'
