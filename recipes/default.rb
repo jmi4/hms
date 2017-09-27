@@ -204,17 +204,30 @@ docker_container node['hms']['sabnzbd']['container_name'] do
   action :run
 end
 
-docker_container node['hms']['subliminal']['container_name'] do
-  network_mode node['hms']['subliminal']['network_mode']
-  restart_policy node['hms']['subliminal']['restart_policy']
-  repo 'diaoulael/subliminal'
-  volumes node['hms']['subliminal']['volumes']
-  action :run
-end
+# Has to be setup as a cronjob not a running container
+# docker_container node['hms']['subliminal']['container_name'] do
+#   network_mode node['hms']['subliminal']['network_mode']
+#   restart_policy node['hms']['subliminal']['restart_policy']
+#   repo 'diaoulael/subliminal'
+#   volumes node['hms']['subliminal']['volumes']
+#   action :run
+# end
 
 cron 'fix perms on downloads' do
   minute '*/1'
   command 'chmod -R 775 /home/downloads/completed/*'
+  user 'root'
+end
+
+cron 'grab subtitles for tv shows' do
+  hour '*/1'
+  command 'docker run --rm --name subliminal -v /home/subliminal/cache:/usr/src/cache -v /home/media/:/media -it diaoulael/subliminal download -l en /media/tv'
+  user 'root'
+end
+
+cron 'grab subtitles for movies' do
+  hour '*/1'
+  command 'docker run --rm --name subliminal -v /home/subliminal/cache:/usr/src/cache -v /home/media/:/media -it diaoulael/subliminal download -l en /media/movies'
   user 'root'
 end
 
