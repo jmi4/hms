@@ -103,10 +103,10 @@ default['hms']['sabnzbd']['volumes'] = [
 ]
 
 default['hms']['subliminal']['container_name'] = 'subliminal'
-default['hms']['subliminal']['network_mode'] = "host"
+default['hms']['subliminal']['network_mode'] = 'host'
 default['hms']['subliminal']['restart_policy'] = 'always'
 default['hms']['subliminal']['volumes'] = [
-  '/home/subliminal/cache:/usr/src/cache', 
+  '/home/subliminal/cache:/usr/src/cache',
   '/home/media/:/media',
 ]
 
