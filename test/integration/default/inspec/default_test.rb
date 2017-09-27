@@ -112,7 +112,7 @@ end
 describe docker_container('subliminal') do
   it { should exist }
   it { should be_running }
-  its('repo') { should eq 'diaoulael/subliminals' }
+  its('repo') { should eq 'diaoulael/subliminal' }
   its('tag') { should eq 'latest' }
 end
 
