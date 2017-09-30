@@ -220,7 +220,7 @@ cron 'fix perms on downloads' do
 end
 
 cron 'grab subtitles for tv shows' do
-  minute '0'
+  minute '30'
   hour '*/1'
   command 'docker run --rm --name subliminal -v /home/subliminal/cache:/usr/src/cache -v /home/media/:/media -it diaoulael/subliminal download -l en /media/tv'
   user 'root'
