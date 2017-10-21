@@ -233,9 +233,23 @@ cron 'grab subtitles for movies' do
   user 'root'
 end
 
+# TODO: Install and configure APC management tool
+ups_package_list = %w(apcupsd apcupsd-cgi)
+ups_package_list.each do |pkg|
+  package pkg
+end
+
+template '/etc/apcupsd/apcupsd.conf' do
+  source 'apcupsd.conf.erb'
+  owner 'root'
+  group 'root'
+  mode '644'
+  action :create
+end
+
+
 # TODO: Install and configure Prometheus
 # TODO: Install and configure Grafana for Promeathus
-# TODO: Install and configure APC management tool
 # TODO: Install OSSEC
 # TODO: Configure firewall
 # Had to run: iptables -I INPUT 4 -i docker0 -j ACCEPT for sonarr to speak to jackett. (Not likely needed anymore)
