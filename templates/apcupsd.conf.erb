@@ -1,0 +1,6 @@
+# This file is controlled by Chef.
+# All manual changes will be overwritten on a chef-client run.
+
+<% node['hms']['apcupsd']['conf'].each do |name,value| -%>
+<%= name %> <%= value %>
+<% end -%>
