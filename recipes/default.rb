@@ -247,6 +247,11 @@ template '/etc/apcupsd/apcupsd.conf' do
   action :create
 end
 
+service 'apcupsd' do
+  action [:start, :enable]
+end
+
+
 
 # TODO: Install and configure Prometheus
 # TODO: Install and configure Grafana for Promeathus
