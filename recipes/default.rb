@@ -251,8 +251,6 @@ service 'apcupsd' do
   action [:start, :enable]
 end
 
-
-
 # TODO: Install and configure Prometheus
 # TODO: Install and configure Grafana for Promeathus
 # TODO: Install OSSEC
